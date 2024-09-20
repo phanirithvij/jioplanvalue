@@ -5,7 +5,12 @@ in
 pkgs.mkShellNoCC {
   packages = with pkgs; [
     black
-    python3
+    (python3.withPackages (
+      py: with py; [
+        pandas
+        numpy
+      ]
+    ))
     npins
     nixfmt-rfc-style
   ];

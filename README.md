@@ -11,7 +11,6 @@
 - [ ] maybe notifications/reminders and link for the direct payment for plan (phonepay)
     - [ ] So an android app?
         - [ ] gotify ?
-- [ ] shell.nix niv
 
 jiofiber todo
 
