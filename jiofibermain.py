@@ -38,6 +38,12 @@ current_date = datetime.now()
 current_month = current_date.month
 
 sixth_of_current_month = datetime(current_date.year, current_month, 6)
+if current_date.day < 6:
+    sixth_of_current_month = datetime(
+        sixth_of_current_month.year,
+        sixth_of_current_month.month - 1,
+        sixth_of_current_month.day,
+    )
 
 if current_month == 12:
     next_month = 1
@@ -47,6 +53,8 @@ else:
     next_year = current_date.year
 
 fifth_of_next_month = datetime(next_year, next_month, 5)
+if current_date.day < 6:
+    fifth_of_next_month = datetime(next_year, next_month - 1, 5)
 
 remaining_days_to_fifth = (fifth_of_next_month - current_date).days
 
