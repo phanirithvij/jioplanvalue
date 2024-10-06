@@ -1,37 +1,10 @@
 from datetime import datetime, timedelta
 
-tot = 3333
+tot = 3300
 
 used = sum(
     [
-        621.78,
-        0.2042,
-        183.88,
-        45.78,
-        6.02,
-        267.43,
-        33.3,
-        293.03,
-        1.36,
-        90.37,
-        10.87,
-        0.316,
-        20.28,
-        0.522,
-        545.28,
-        122.86,
-        209.52,
-        1.11,
-        27.11,
-        0.2873,
-        0.14023,
-        238.26,
-        79.82,
-        4.31,
-        18.88,
-        4.56,
-        149.14,
-        143.61,
+        5.12,  # in call she told 3294.88 left and 6th 0000 expiry
     ]
 )
 
@@ -54,26 +27,30 @@ else:
     next_month = current_month + 1
     next_year = current_date.year
 
-fifth_of_next_month = datetime(next_year, next_month, 5)
+sixth_of_next_month = datetime(next_year, next_month, 6)
 if current_date.day < 6:
-    fifth_of_next_month = datetime(next_year, next_month - 1, 5)
+    sixth_of_next_month = datetime(next_year, next_month - 1, 6)
 
-remaining_days_to_fifth = (fifth_of_next_month - current_date).days
+remaining_days_to_sixth = (sixth_of_next_month - current_date).days
+if remaining_days_to_sixth == 0:
+    remaining_days_to_sixth = 1
 
 days_passed = (current_date - sixth_of_current_month).days
+if days_passed == 0:
+    days_passed = 1
 
 print("used:", used / days_passed, "GBpd", "in", days_passed, "days")
 print(
     "rem:",
-    (tot - used) / remaining_days_to_fifth,
+    (tot - used) / remaining_days_to_sixth,
     "GBpd",
-    remaining_days_to_fifth,
+    remaining_days_to_sixth,
     "days",
 )
 print(
     f"""
     {used}/{tot}
     rem: {tot - used}
-    used {round(used/tot * 100)}% in {round(days_passed*100/(days_passed+remaining_days_to_fifth))}% of time
+    used {round(used/tot * 100)}% in {round(days_passed*100/(days_passed+remaining_days_to_sixth))}% of time
     """
 )
