@@ -5,6 +5,15 @@ tot = 3300
 used = sum(
     [
         5.12,  # in call she told 3294.88 left and 6th 0000 expiry
+        2.56,
+        71.02,
+        0.15229,
+        1.79,
+        0.31566,
+        2.46,
+        0.2538,
+        18.53,
+        # TODO call again in 10 days
     ]
 )
 
