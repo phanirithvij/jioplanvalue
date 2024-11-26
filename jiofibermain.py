@@ -4,10 +4,8 @@ tot = 3300
 
 used = sum(
     [
-        55.94,
-        0.05872,
-        345.56,
-        186.42,  # in call she told 2695 left and 6th 0000 expiry
+        # called she said 1040.02 left
+        3300-1040.2
     ]
 )
 
