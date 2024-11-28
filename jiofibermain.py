@@ -4,8 +4,8 @@ tot = 3300
 
 used = sum(
     [
-        # called she said 1040.02 left
-        3300-1040.2
+        # called she said 882 left
+        3300-882
     ]
 )
 
